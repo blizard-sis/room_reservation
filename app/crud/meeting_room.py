@@ -4,7 +4,7 @@ from app.schemas.meeting_room import MeetingRoomCreate
 
 
 async def create_meeting_room(
-        new_room: MeetingRoomCreate
+    new_room: MeetingRoomCreate
 ) -> MeetingRoom:
     new_room_data = new_room.dict()
     db_room = MeetingRoom(**new_room_data)
