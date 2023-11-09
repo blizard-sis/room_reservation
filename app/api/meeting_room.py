@@ -1,15 +1,11 @@
-# app/api/meeting_room.py
-
-# Импортируем класс Depends.
 from fastapi import APIRouter, Depends, HTTPException
 
-# Импортируем класс асинхронной сессии для аннотации параметра.
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.db import get_async_session
 from app.crud.meeting_room import (
     create_meeting_room, delete_meeting_room,
-    get_meeting_room_by_id, get_room_id_by_name, 
+    get_meeting_room_by_id, get_room_id_by_name,
     read_all_rooms_from_db, update_meeting_room
 )
 from app.models.meeting_room import MeetingRoom
