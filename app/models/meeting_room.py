@@ -7,4 +7,4 @@ from app.core.db import Base
 class MeetingRoom(Base):
     name = Column(String(100), unique=True, nullable=False)
     description = Column(Text)
-    reservations = relationship('Reservation', cascade='delete') 
+    reservations = relationship('Reservation', cascade='delete')
