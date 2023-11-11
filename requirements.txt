@@ -4,3 +4,5 @@ aiosqlite==0.17.0
 sqlalchemy==1.4.36 
 alembic==1.7.7
 greenlet
+fastapi-users[sqlalchemy]==10.0.6
+fastapi-users-db-sqlalchemy<5.0.0
