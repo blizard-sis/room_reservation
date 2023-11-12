@@ -22,6 +22,7 @@ async def create_user(
                 async with get_user_manager_context(user_db) as user_manager:
                     await user_manager.create(
                         UserCreate(
+                            first_name='admin',
                             email=email,
                             password=password,
                             is_superuser=is_superuser
