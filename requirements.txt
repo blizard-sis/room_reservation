@@ -6,3 +6,4 @@ alembic==1.7.7
 greenlet
 fastapi-users[sqlalchemy]==10.0.6
 fastapi-users-db-sqlalchemy<5.0.0
+aiogoogle
