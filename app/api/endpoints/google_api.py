@@ -7,7 +7,9 @@ from app.core.db import get_async_session
 from app.core.google_client import get_service
 from app.core.user import current_superuser
 from app.crud.reservation import reservation_crud
-
+from app.services.google_api import (
+    spreadsheets_create, spreadsheets_update_value, set_user_permissions
+)
 router = APIRouter()
 
 
@@ -27,4 +29,9 @@ async def get_report(
     reservations = await reservation_crud.get_count_res_at_the_same_time(
         from_reserve, to_reserve, session
     )
-    return reservations
+    # Вызов функций
+    spreadsheetid = await spreadsheets_create(wrapper_services)
+    await set_user_permissions(spreadsheetid, wrapper_services)
+    await spreadsheets_update_value(spreadsheetid,
+                                    reservations,
+                                    wrapper_services)
